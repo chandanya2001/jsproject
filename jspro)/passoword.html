@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password validation</title>
+</head>
+<style>
+
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        margin: auto;
+    }
+    #message{
+
+        color: red;
+    }
+    #mess{
+
+        color: red;
+    }
+</style>
+<body>
+<h1>password validation</h1>
+<form action="#"onsubmit="return myfun()">
+
+Password :<input type="password" id="pass" value="">
+<span id="message"></span><br><br>
+Confirm Password : <input type="password" id="password" value="">
+<span id="mess"></span><br><br>
+<input type="submit" value="submit">
+</form>
+<script>
+
+
+    function myfun(){
+    
+    var a = document.getElementById('pass').value;
+    var b = document.getElementById('password').value;
+
+    
+    
+if(a==""){
+    document.getElementById('message').innerHTML=" ** please fill password";
+return false;
+
+}
+
+
+    if(a.length<5){
+document.getElementById('message').innerHTML="password most be five(5) character";
+return false;
+
+    }
+    if(a.length>20){
+document.getElementById('message').innerHTML="password most be smaller then twenty(20) character";
+return false;
+
+    }
+ if(a==b){
+document.getElementById('mess').innerHTML='correct password';
+return false;
+
+ }else{
+    document.getElementById('mess').innerHTML='password is not match please try again';
+return false;
+
+ }
+    
+    }
+</script>
+</body>
+</html>

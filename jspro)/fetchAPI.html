@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    body{
+
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color:  rgb(12, 119, 196);;
+    }
+    h1{
+
+        font-size: 30px;
+    font-weight: bold;
+   
+    text-transform: capitalize;
+    font-family: sans-serif;
+color: white;
+text-shadow: 2px 1px 15px rgba(0,0,0,0.9);
+    }
+    button{
+
+        width: 200px;
+        font-size: 20px;
+        padding: 10px;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        font-family: sans-serif;
+        border: none;
+        text-transform: capitalize;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    button:hover{
+
+
+background-color: blue;
+border-radius: 20px;
+
+    }
+    table{
+
+        border: 3px solid white;
+       
+        background: #4b99d8;
+    }
+    table th{
+
+        margin: 0px 20px;
+        padding: 20px;
+        color: white;
+        text-transform: capitalize;
+        font-family: sans-serif;
+       
+    }
+    table td{
+
+       
+        text-align: center;
+        color: white;
+    }
+    .country{
+
+        color: red;
+    }
+    #count{
+
+        color: red;
+        font-weight: bold;
+
+    }
+</style>
+<body>
+    <h1>
+covid cases information
+   
+    </h1>
+    <!-- <p id="mydata"></p> -->
+
+    <table>
+<tr>
+    <th class="country">Country</th>
+   <th>Active Case</th>
+   <th>Death Case</th>
+   <th>Recovery case</th>
+   <th>Current Date</th>
+    
+
+</tr>
+<tr>
+    <td><p id="count"></p></td>
+    <td><p id="activecase"></p></td>
+
+    <td><p id="deathcase"></p></td>
+    <td><p id="recoverycase"></p></td>
+
+    <td><p id="date"></p></td>
+
+
+
+</tr>
+
+
+
+
+    </table>
+
+    <button onclick="checkcase()">click hare</button>
+    <script>
+
+const checkcase=()=>{
+
+
+fetch('https://api.covid19api.com/summary').then((data)=>{
+
+
+return data.json();
+}).then((actualdata)=>{
+
+    const apidata=(actualdata.Countries[76]);
+    // console.log(apidata);
+
+    document.getElementById('count').innerHTML=apidata.Country;
+document.getElementById('activecase').innerHTML=apidata.TotalConfirmed;
+document.getElementById('deathcase').innerHTML=apidata.TotalDeaths;
+document.getElementById('recoverycase').innerHTML=apidata.NewRecovered
+document.getElementById('date').innerHTML=apidata.Date;
+
+    // document.getElementById('mydata').innerHTML=`my country name is ${apidata.Country} <br> total covid positive cases in india is ${apidata.TotalConfirmed} <br> total death is ${apidata.TotalDeaths} <br> total new confirmed cases is ${apidata.NewConfirmed}<br> newrecovery cases is ${apidata.NewRecovered}<br> todat death cases is ${apidata.NewDeaths}<br> today recovered cases is ${apidata.NewRecovered}<br> current date is ${apidata.Date} `;
+
+}).catch((error)=>{
+
+    console.log(`the error is ${error}`);
+}
+// });
+// fetch(' https://api.openweathermap.org/data/2.5/weather?q={siwan}&beab564b7610b93140474fcf7941ca28').then((data)=>{
+
+//     console.log(data);
+// })
+
+
+
+    </script>
+</body>
+</html>

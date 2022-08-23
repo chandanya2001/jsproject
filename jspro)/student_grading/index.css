@@ -1,0 +1,117 @@
+*{
+
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color:rgb(15, 221, 221);
+}
+h1{
+
+    margin: 20px;
+ width: 500px;
+ text-align: center;
+ text-transform: capitalize;
+ font-family: sans-serif;
+ color: rgb(235, 70, 235);
+ text-shadow: 5px 0px white;
+ letter-spacing: 5px;
+ font-weight: bold;
+ 
+}
+table{
+
+    width:500px;
+   
+    
+}
+table .td-1{
+
+    width: 250px;
+
+padding-left: 50px;
+    color: white;
+    font-family: sans-serif;
+  
+}
+.infor{
+
+    margin: 30px;
+    text-transform: capitalize;
+}
+.container{
+
+    width: 400px;
+    height: auto;
+    padding: 30px 50px ;
+   border-radius: 10px;
+  
+    background-color: rgb(231, 82, 231);
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.3)
+
+}
+label{
+
+    color: white;
+    font-family: sans-serif;
+    word-spacing: normal;
+}
+
+input[type="text"]{
+
+    width: 100%;
+text-align: center;
+padding: 5px;
+margin:10px 0px;
+outline: none;
+border-left: none;
+border-right: none;
+border-top: none;
+border-color:blue;
+
+
+
+}
+
+.btn{
+
+   
+    margin-top: 20px;
+    
+}
+button{
+
+    padding:5px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+
+    background-color: red;
+    color: white;
+}
+input[type="reset"]{
+
+ 
+    border-radius: 10px;
+    border: none;
+    margin-left: 20px;
+    padding: 5px 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+input[type="reset"]:hover{
+
+    background-color: red;
+    color: white;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curd operation</title>
+</head>
+<style>
+
+    *{
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    table{
+
+        width: 80%;
+        margin: 40px auto;
+        background: rgba(124, 154, 176);
+
+    }
+    table .list{
+
+
+        text-align: center;
+        width: 100%;
+
+    }
+    td{
+
+        border: 1px solid rgb(204,200,200);
+        text-align: left;
+        padding: 8px 15px;
+    }
+    input[type="text"],input[type="number"]{
+
+
+        width: 91%;
+        padding: 12px 20px;
+        margin: 8px 0px;
+        display: inline-block;
+        border: 1px solid rgb(165,161,161);
+        border-radius: 4px;
+      
+    }
+
+    input[type="submit"],input[type="reset"]{
+
+
+background:#eee;
+padding: 6px 12px;
+margin: 15px 0px 10px;
+display: inline-block;
+border:none;
+border-radius: 30px;
+font-size: 10px;
+cursor: pointer;
+outline: none;
+
+}  
+input[type="submit"]:hover{
+
+    background: #4b99d8;
+}
+input[type="reset"]:hover{
+
+background: #4b99d8;
+}
+button{
+
+    background:#eee;
+padding: 6px 12px;
+margin: 15px 0px 10px;
+display: inline-block;
+border:none;
+border-radius: 30px;
+font-size: 10px;
+cursor: pointer;
+outline: none;
+
+}
+button:hover{
+
+    background: #4b99d8;  
+}
+</style>
+
+<body>
+    <table>
+
+        <tr>
+
+            <td>
+
+                <form onsubmit=" return onformsubmit()
+                ">
+
+                    <div>
+                        <label for="prdname">product name</label>
+                        <input type="text" name="prodname" id="prdname">
+                    </div>
+
+                    <div>
+                        <label for="quantity"> product quantity </label>
+                        <input type="text" name="quantity" id="quantity">
+                    </div>
+
+                    <div>
+                        <label for="price"> product price</label>
+                        <input type="number" name="price" id="price">
+                    </div>
+                    <div class="action_button">
+                        <input type="submit" value="submit">
+                        <input type="reset" value="reset">
+                    </div>
+                </form>
+            <td>
+
+                <table class="list" id="storelist">
+                    <tr>
+
+                        <th>
+                            product name
+                            <p id="prdn"></p>
+                        </th>
+                        <th>
+                            quantity
+                            <p id="qut"></p>
+                        </th>
+                        <th>
+                            price
+                            <p id="cost"></p>
+                        </th>
+                    </tr>
+
+                </table>
+            </td>
+            </td>
+        </tr>
+
+
+    </table>
+
+
+    <script>
+
+const onformsubmit=()=>{
+
+let prodname=document.getElementById('prdname').value;
+
+let prdn=document.getElementById('prdn');
+prdn.innerHTML=prodname;
+// return false;
+
+let product_quantity=document.getElementById('quantity').value;
+console.log(product_quantity);
+let qut=document.getElementById('qut');
+qut.innerHTML=product_quantity;
+//  return false;
+let price=document.getElementById('price').value;
+let cost=document.getElementById('cost');
+cost.innerHTML=price;
+return false;
+
+}
+
+    </script>
+</body>
+
+</html>

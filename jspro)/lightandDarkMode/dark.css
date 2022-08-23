@@ -1,0 +1,54 @@
+body{
+    width: 100%;
+    height:100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: auto;
+background-color:#23272b;
+
+}
+.button{
+
+    margin-bottom: 30px;
+
+   
+}
+#dark{
+
+    display: none;
+}
+form{
+width: auto;
+height: auto;
+    border: 1px solid black;
+    padding: 20px 50px;
+    background-color:white;
+}
+input[type="text"]{
+
+   outline: none;
+    width: 100%;
+    margin: 10px;
+    padding: 5px;
+}
+input[type="password"]{
+
+    outline: none;
+     width: 100%;
+     margin: 10px;
+     padding: 5px;
+ }
+ #login{
+width: 70px;
+padding: 5px;
+margin-top: 20px;
+margin-left: 50%;
+margin-bottom: 20px;
+background-color: red;
+color: white;
+border: none;
+border-radius: 10px;
+
+ }

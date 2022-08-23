@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<style>
+
+    body{
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+    #message{
+
+
+        color: red;
+
+    }
+</style>
+<body>
+    <h1>Email validation</h1>
+    <form action="#" name="myform" onsubmit="return myfun()">
+    
+    Email :<input type="text" name="Email" value="">
+    <span id="message"></span><br><br>
+    <input type="submit" value="submit">
+    
+    </form>
+    <script>
+
+function myfun(){
+
+let a=document.myform.Email.value;
+if(a.indexOf('@')<=0){
+
+    document.getElementById('message').innerHTML="invalid email '@ position is not correct'";
+    return false;
+}
+if((a.charAt(a.length-4)!='.') && (a.charAt(a.length-3)!='.')){
+    document.getElementById('message').innerHTML="invalid email '.' position is not correct";
+    return false;
+}else{
+
+    document.getElementById('message').innerHTML="Correct Email"
+}
+
+}
+
+
+
+    </script>
+</body>
+</html>

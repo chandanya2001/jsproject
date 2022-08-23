@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>colock.............</h1>
+<h2 id="time"></h2>
+<script>
+
+
+function timer(){
+
+
+    let data=new Date();
+
+    let h=data.getHours();
+    let m=data.getMinutes();
+    let s=data.getSeconds();
+
+    let session='AM';
+
+    if(h==0){
+
+
+        h=12;
+      
+    }
+    if(h>12){
+h=h-12;
+        session='PM';
+
+    }
+
+    if(h<10){h="0"+h}
+    if(m<10){m="0"+m}
+    if(s<10){s="0"+s}
+
+document.getElementById('time').innerHTML=h +":"+m +":" +s+ "  " +  session;
+
+setTimeout(timer,1000);
+}
+
+timer();
+</script>
+
+</body>
+</html>

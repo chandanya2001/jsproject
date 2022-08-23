@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Gassing Programming</title>
+    <style>
+
+        body{
+width: 100%;
+height: 100vh;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color:black;
+        }
+
+        .main{
+
+            width: 300px;
+        background-color: white;
+        padding:100px 50px;
+        border-radius: 20px;
+        }
+        input[type="text"]{
+      text-align: center;
+      padding: 5px;
+      margin-top: 10px;
+
+
+
+        }
+        .num{
+
+       
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+     
+        button{
+
+            padding:5px 20px;
+            margin: 10px;
+        }
+        #gess{
+
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+<label for="number" class="num">enter anyy number:</label>
+<input type="text" id="number" name="">
+
+
+<p id="gess"></p>
+<span id="attemp"></span>
+<button onclick="gess_number()">submit</button>
+        
+    </div>
+    <script>
+        var rend=Math.floor(Math.random()*100);
+
+var attemp=0;
+        const gess_number=()=>{
+
+          
+let input=document.getElementById('number').value;
+
+if(input==""){
+
+    
+document.getElementById('gess').innerHTML="please enter any number";
+}
+   else if(rend>input){
+
+document.getElementById('gess').innerHTML="please enter high number";
+attemp++;
+document.getElementById('attemp').innerHTML=`all attemp : ${attemp}`;
+}else if(rend<input){
+
+    document.getElementById('gess').innerHTML="please enter low number";
+    attemp++;
+document.getElementById('attemp').innerHTML=`all attemp : ${attemp}`;
+}else{
+
+    
+    document.getElementById('gess').innerHTML=`you gess successfully !!! your gess number is:${input}`;
+    attemp=0;
+}
+if(attemp==10){
+
+document.getElementById('gess').innerHTML="sorry you have try maximum times"; 
+attemp=0;
+   
+}
+document.getElementById('number').value='';
+  }  
+    </script>
+</body>
+</html>

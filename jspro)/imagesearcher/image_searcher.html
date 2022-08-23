@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Searcher</title>
+</head>
+<style>
+*{
+
+    margin: 0;
+    padding: 0;
+
+box-sizing: border-box;}
+body{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+background-color: skyblue;
+}
+#product{
+
+    width: 1000px;
+    height: auto;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: rgb(206, 21, 200);
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-radius: 10px;
+border: none;
+margin-top: 20px;
+}
+#product:focus{
+
+    outline: none;
+}
+::placeholder{
+
+    color: white;
+}
+.image-container{
+
+    width: 1000px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    margin-bottom: 50px;
+
+    
+
+}
+.image-container .image{
+    width: 300px;
+    height: 450px;
+
+margin-top: 50px;
+background-size: cover;
+background-position: center;
+transition-property:all;
+    transition-timing-function:ease;
+    transition-duration: 0s;
+    transition-delay: 0s;
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.3);
+
+
+ 
+}
+.image:hover{
+width:290px ;
+height:440px;
+}
+.pname{
+
+    text-align: center;
+   background-color:rgb(206, 21, 200);
+   color:white;
+  
+
+   
+} 
+img{
+
+   width: 300px;
+   height: 300px;
+   margin-bottom: 20px;
+}
+img:hover{
+
+     cursor: pointer;
+}
+.btn{
+
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    color: white;
+    background-color: blue;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+    text-transform: capitalize;
+    
+}
+.btn:hover{
+
+    background-color: red;
+    transition: 2se ease-in-out;
+}
+.btn:focus{
+    outline: none;
+}
+</style>
+<body>
+    <form action="#">
+    <input type="text" name="" placeholder="search product here" id="product" onkeyup="image_searcher()">
+</form>
+    <div class="image-container">
+    
+<div class="image">
+    <img src="apple-1.jpeg" alt="">
+    <div class="pname">
+        
+        <h2>mobile</h2>
+        <h3>APPLE iPhone 13 Pro Max (Graphite, 1 TB)</h3>
+        <h3>₹1,79,900</h3>
+        <button class="btn">shop now</button>
+
+    </div>
+</div>
+<div class="image">
+    <img src="watch-1.jpeg" alt="">
+    <div class="pname">
+        
+        <h2>watch</h2>
+        <h3>Fastrack</h3>
+        <h3>₹1,267</h3>
+        
+        <button class="btn">shop now</button> 
+    </div>
+</div>
+<div class="image">
+    <img src="headphone-1.jpeg" alt="">
+   
+    <div class="pname">
+        
+        <h2>headphone</h2>
+        <h3> boAt Immortal IM1300 Bluetooth Gaming Headset</h3>
+        <h3>₹3,799</h3>
+        <button class="btn">shop now</button> 
+    </div>
+</div>
+<div class="image">
+    <img src="apple-2.jpeg" al">
+    <div class="pname">
+        
+        <h2>mobile</h2>
+        <h3>APPLE iPhone 13 Pro Max (Graphite, 256 GB)</h3>
+        <h3>₹1,79,900</h3>
+        <button class="btn">shop now</button>
+        
+    </div>
+</div>
+<div class="image">
+    <img src="watch-2.jpeg" alt="">
+    <div class="pname">
+        
+        <h2>watch</h2>
+        <h3>LOIS CARON</h3>
+        <h3>₹211</h3>
+        <button class="btn">shop now</button>
+    </div>
+    
+</div>
+<div class="image">
+    <img src="headphone-2.jpeg" alt="">
+    <div class="pname">
+        
+        <h2>headphone</h2>
+        <h3>boAt Immortal IM1300 Bluetooth Gaming</h3>
+        <h3>₹3,499</h3>
+        <button class="btn">shop now</button>
+    </div>
+</div>
+<div class="image">
+    <img src="apple-3.jpeg" alt="">
+    <div class="pname">
+        
+        <h2>mobile</h2>
+        <h3>APPLE iPhone 13 Pro Max (Gold, 128 GB)</h3>
+        <h3>₹1,29,900</h3>
+        <button class="btn">shop now</button>
+    </div>
+</div>
+<div class="image">
+    <img src="watch-3.jpeg" alt="">
+    
+    <div class="pname">
+        
+   
+        <h2>watch</h2>
+        <h3>Fogg</h3>
+        <h3>₹238</h3>
+        <button class="btn">shop now</button>
+        
+    </div>
+</div>
+<div class="image">
+    <img src="headphone-3.jpeg" alt="">
+    <div class="pname">
+        
+        <h2>headphone</h2>
+        <h3>boAt Rockerz 660 with Wear Detection & 60 Hours Playtim...</h3>
+        <h3>₹2,499</h3>
+        <button class="btn">shop now</button>
+    </div>
+</div>
+
+    </div>
+    <script>
+const image_searcher=()=>{
+
+const input_product=document.getElementById('product').value.toUpperCase();
+const all_product_list=document.querySelector('.image-container');
+const image=document.querySelectorAll('.image');
+const product_name=document.getElementsByTagName('h2');
+for(let i=0;i<product_name.length;i++){
+
+let matchdata=image[i].getElementsByTagName('h2')[0];
+if(matchdata){
+
+    let data=image[i].textContent || image[i].innerHTML;
+    if(data.toUpperCase().indexOf(input_product)>-1){
+
+        image[i].style.display="";
+    }else{
+
+        image[i].style.display="none";
+     
+    }
+}
+
+}
+}
+
+    </script>
+</body>
+</html>

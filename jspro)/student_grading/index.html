@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>studen grading system</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>studen grade calculator</h1>
+    <div class="container">
+
+        <table>
+<tr>
+<td><form action="#">
+
+<label for="math">Enter Math Marks :</label>
+<input type="text" id="math" ><br>
+<p id="error"></p>
+<label for="physics">Enter Physics Marks :</label>
+<input type="text" id="physics">
+
+<label for="chemistry">Enter chemistry Marks :</label>
+<input type="text" id="chemistry">
+<label for="hindi">Enter Hindi Marks :</label>
+<input type="text" id="hindi">
+<label for="english">Enter English Marks :</label>
+<input type="text" id="english">
+
+<div class="btn">
+
+    <button onclick="grade()">submit data</button>
+    <input type="reset" value="reset">
+
+</div>
+</form></td>
+
+
+   <td class="td-1">
+
+<p class="infor"> total marks : <span id="tm"></span><br><br></p>   
+<p class="infor"> obtained Marks : <span id="ob"></span><br><br></p>   
+<p class="infor"> Percentage : <span id="per"></span><br><br></p> 
+<p class="infor"> grade: <span id="gd"></span><br><br></p>   
+
+<p class="infor"> result : <span id="res"></span><br><br></p>   
+
+
+    
+
+   </td>
+   
+
+
+ 
+</tr>
+
+
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
